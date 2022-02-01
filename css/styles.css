@@ -132,6 +132,21 @@ nav {
     color: var(--accent-color);
 }
 
+.page-header .link {
+    position: relative;
+}
+
+.main-nav .current::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
 .site-nav a{
 color: var(--title-text-color);
 }
@@ -590,25 +605,41 @@ address {
     letter-spacing: 0.06em;
    }
 
-   /* .portfolio-img {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 16px;
-    line-height: 1.87;
-   }
+.card-icon {
+    position: relative;
+    overflow: hidden;
+}
 
-    .desc {
+.card-desc {
     position: absolute;
     top: 0;
-    opacity: 1;
     padding: 63px 24px 63px 24px;
     align-items: center;
     width: 100%;
     height: 100%;
     background-color: rgba(33, 149, 243, 0.9);
-    color:#fff;
+    margin: 0;
+    color: #fff;
+    font-weight: 400;
     font-size: 18px;
     line-height: 1.56;
-    letter-spacing: 0.03em;
-    
-} */
+    transform: translateY(294px);
+    transition: transform 250ms;
+}
+
+ 
+.portfolio-list .grid-link:hover .card-desc,
+.portfolio-list .grid-link:focus .card-desc {
+    transform: translateY(0px);
+}
+
+.grid-link {
+    text-decoration: none;
+    color: var(--primary-text-color);
+}
+
+.grid-link img {
+    display: block;
+    max-width: 100%;
+    height: auto
+}
